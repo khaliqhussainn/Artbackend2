@@ -8,7 +8,6 @@
 //     await connectDb();
 //     console.log("server started on ", port);
 // });
-
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -26,6 +25,10 @@ app.use(cors({
   allowedHeaders: 'Content-Type,Authorization',
   credentials: true // If you're using cookies or authorization headers
 }));
+
+// Enable pre-flight across-the-board
+app.options('*', cors());
+
 app.use(bodyParser.json());
 
 // Connect to database before starting server
