@@ -44,4 +44,10 @@ app.use('/api/reviews', reviewRouter)
 const ratingRouter = require("./routes/ratingRoute")
 app.use('/api/ratings', ratingRouter)
 
+// src/index.js - Add this new route
+const ourProductRouter = require("./routes/ourProductRoute")
+app.use('/api/ourProduct', ourProductRouter)
+
+
+
 module.exports = app;

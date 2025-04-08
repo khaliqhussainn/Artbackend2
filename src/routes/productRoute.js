@@ -7,4 +7,6 @@ const authenticate = require("../middleware/authenticate.js");
 router.get("/", authenticate ,productController.getAllProducts)
 router.get("/id/:id", authenticate ,productController.findProductById)
 
+router.get("/getOurProduct", productController.getAllProducts) // No authentication required for public products
+
 module.exports = router

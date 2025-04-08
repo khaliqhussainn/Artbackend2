@@ -39,16 +39,15 @@ const findProductById = async (req, res) => {
     }
 }
 
+// src/controller/productController.js - Fix getAllProducts
 const getAllProducts = async (req, res) => {
-    const productId = req.params.id;
     try {
         const products = await productService.getAllProducts(req.query);
-        return res.status(201).send(products);
+        return res.status(200).send(products); // Changed from 201 to 200 for GET request
     } catch (error) {
         return res.status(500).send({ error: error.message });
     }
 }
-
 const createMultipleProducts = async (req, res) => {
     const productId = req.params.id;
     try {
